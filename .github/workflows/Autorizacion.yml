@@ -38,7 +38,7 @@ jobs:
         name: Autorizacion.Middleware
         if-no-files-found: error
         retention-days: 7
-        path: Autorizacion/Autorizacion.Middleware/bin/Debug/net8.0/*.nupkg
+        path: Autorizacion/Autorizacion.Middleware/bin/Debug/*.nupkg
 
   Debug:
     runs-on: ubuntu-latest    
