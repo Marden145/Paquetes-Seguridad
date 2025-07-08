@@ -11,28 +11,26 @@ on:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v4
-
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-
     - name: Restore dependencies
       run: dotnet restore
       working-directory: ./Autorizacion/Autorizacion.Middleware
-
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --no-restore
       working-directory: ./Autorizacion/Autorizacion.Middleware
-
     - name: Pack      
-      run: dotnet pack --configuration Release --no-build
+      run: dotnet pack
       working-directory: ./Autorizacion/Autorizacion.Middleware
-
-    - uses: actions/upload-artifact@v4
+      
+    - uses: actions/upload-artifact@v3
       with:
         name: Autorizacion.Middleware
         if-no-files-found: error
