@@ -56,5 +56,5 @@ jobs:
     - name: Prep packages
       run: dotnet nuget add source --username Marden145 --password ${{ secrets.PAQUETES_TOKEN }} --store-password-in-clear-text --name paquetes "https://nuget.pkg.github.com/Marden145/index.json"
     - name: Push package to GitHub packages 
-      run: dotnet nuget push Autorizacion/Autorizacion.Middleware/bin/Debug/*.nupkg --api-key ${{ secrets.PAQUETES_TOKEN }}  --source "paquetes" --skip-duplicate
+      run: dotnet nuget push Autorizacion.Middleware/*.nupkg --api-key ${{ secrets.PAQUETES_TOKEN }}  --source "paquetes" --skip-duplicate
     
